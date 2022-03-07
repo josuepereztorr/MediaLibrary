@@ -21,6 +21,16 @@ namespace MediaLibrary
             };
 
             movie.Display();
+            
+            Album album = new Album
+            {
+                MediaId = 321,
+                Title = "Greatest Album Ever, The (2020)",
+                Artist = "Jeff's Awesome Band",
+                RecordLabel = "Universal Music Group",
+                Genres = { "Rock" }
+            };
+            Console.WriteLine(album.Display());
 
             Logger.Info("Program Ended");
         }
