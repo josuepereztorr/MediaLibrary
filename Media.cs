@@ -44,4 +44,17 @@ namespace MediaLibrary
             return $"Id: {MediaId}\nTitle: {Title}\nArtist: {Artist}\nLabel: {RecordLabel}\nGenres: {string.Join(", ", Genres)}\n";
         }
     }
+    
+    // Book class is derived from Media class
+    public class Book : Media
+    {
+        public string Author { get; set; }
+        public UInt16 PageCount { get; set; }
+        public string Publisher { get; set; }
+
+        public override string Display()
+        {
+            return $"Id: {MediaId}\nTitle: {Title}\nAuthor: {Author}\nPages: {PageCount}\nPublisher: {Publisher}\nGenres: {string.Join(", ", Genres)}\n";
+        }
+    }
 }

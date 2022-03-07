@@ -31,6 +31,18 @@ namespace MediaLibrary
                 Genres = { "Rock" }
             };
             Console.WriteLine(album.Display());
+            
+            Book book = new Book
+            {
+                MediaId = 111,
+                Title = "Super Cool Book",
+                Author = "Jeff Grissom",
+                PageCount = 101,
+                Publisher = "",
+                Genres = { "Suspense", "Mystery" }
+            };
+            Console.WriteLine(book.Display());
+
 
             Logger.Info("Program Ended");
         }
