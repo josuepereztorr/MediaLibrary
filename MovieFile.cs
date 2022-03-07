@@ -99,7 +99,7 @@ namespace MediaLibrary
                 string title = movie.Title.IndexOf(',') != -1 || movie.Title.IndexOf('"') != -1 ? $"\"{movie.Title}\"" : movie.Title;
                 StreamWriter sw = new StreamWriter(FilePath, true);
                 // write movie data to file
-                sw.WriteLine($"{movie.MediaId},{title},{string.Join("|", movie.Genres)},{movie.Director},{movie.RunningTime}");
+                sw.WriteLine($"{movie.MediaId},{title},{string.Join("|", movie.Genres)},{movie.Director},{movie.RunningTime.ToString()}");
                 sw.Close();
                 // add movie details to List
                 Movies.Add(movie);
