@@ -19,7 +19,7 @@ namespace MediaLibrary
             };
 
             movie.Display();
-            
+
             Logger.Info("Program Ended");
         }
     }
