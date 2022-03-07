@@ -16,6 +16,8 @@ namespace MediaLibrary
                 MediaId = 123,
                 Title = "Greatest Movie Ever, The (2020)",
                 Genres = {"Comedy", "Romance"},
+                Director = "Jeff Grissom",
+                RunningTime = new TimeSpan(2, 21, 23),
             };
 
             movie.Display();

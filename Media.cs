@@ -25,7 +25,7 @@ namespace MediaLibrary
 
     public class Movie : Media
     {
-         
-        
+        public string Director { get; set; }
+        public TimeSpan RunningTime { get; set; }
     }
 }
