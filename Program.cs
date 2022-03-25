@@ -97,6 +97,7 @@ namespace MediaLibrary
                         Console.WriteLine($"  {m.Title}");
                     }
  
+                    
                     Console.ResetColor();
                 }
 
