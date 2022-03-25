@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using NLog;
 
 namespace MediaLibrary
@@ -24,9 +26,12 @@ namespace MediaLibrary
                 
                 Console.WriteLine("1) Add Movie");
                 Console.WriteLine("2) Display all Movies");
+                Console.WriteLine("3) Find movie");
                 Console.WriteLine("(Type 1, 2, or 'Q' to quit)");
 
                 input = Console.ReadLine();
+
+                Console.WriteLine();
 
                 if (input == "1")
                 {
@@ -74,11 +79,32 @@ namespace MediaLibrary
 
                     movieFile.Movies.ForEach(m => Console.Write($"{m.Display()}\n"));
                     
+                } else if (input == "3")
+                {
+                    Logger.Info("User choice: 3");
+                    
+                    Console.ForegroundColor = ConsoleColor.Green;
+
+                    Console.Write("Search by title: ");
+                    string title = Console.ReadLine();
+
+                    IEnumerable<Movie> movies = movieFile.Movies.Where(m => m.Title.ToLower().Contains(title.ToLower()));
+
+                    Console.WriteLine($"Movies Found: {movies.Count()}\n");
+                    
+                    foreach(Movie m in movies)
+                    {
+                        Console.WriteLine($"  {m.Title}");
+                    }
+
+                    Console.ResetColor();
                 }
 
             } while (input != "Q");
             
             Logger.Info("Program Ended");
+
+            Console.WriteLine();
         }
     }
 }
